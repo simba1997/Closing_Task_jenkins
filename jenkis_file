@@ -1,0 +1,20 @@
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                   sh 'mvn clean package'
+                }
+            }
+        }
+            post {
+
+                success {
+                        slackSend channel: 'jenkins', message: 'Build Success'
+            }
+                failure {
+                         slackSend channel: 'jenkins', message: 'Build failed'
+                        }
+
+        }
+    }
