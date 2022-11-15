@@ -10,13 +10,13 @@
 
 </head>
 
-<body class="container">
+<body class="container" style=background-color:#B08B83>
 <div style="height: 30px"></div>
-<h1 class="text-center" style="color: darkgreen">ynet - חדשות </h1>
+<h1 class="text-center" style="color: darkred">ynet - חדשות </h1>
 <div style="height: 30px"></div>
 <div class="row">
     <div class="col-3  p-2 container"  th:each="news: ${ynetNews}">
-        <div class="container-fluid bg-light border border-success border-3 rounded-4" >
+        <div class="container-fluid bg-light border border-success border-3 rounded-4 " >
             <div class="h4 container-flex" th:text="${news.getTitle()}"></div>
             <div class="" th:utext="${news.getDescription().getValue()}"></div>
             <div >
